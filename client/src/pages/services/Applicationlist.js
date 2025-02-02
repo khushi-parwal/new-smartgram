@@ -6,8 +6,10 @@ import './Applicationlist.css';
 const ApplicationList = () => {
     const [applications, setApplications] = useState([]);
 
+    axios.defaults.withCredentials=true;
+
     useEffect(() => {
-        axios.get('https://smartgarm-panchayat-system-7.onrender.com/applications')
+        axios.get('http://localhost:3000/applications')
             .then((response) => {
                 setApplications(response.data);
             })

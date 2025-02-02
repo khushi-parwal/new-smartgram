@@ -15,7 +15,7 @@ function NotificationForm() {
     wordNoAndAreaDetails: '',
   });
 
-
+  axios.defaults.withCredentials=true;
 
   // const [responseMessage, setResponseMessage] = useState('');
 
@@ -33,7 +33,7 @@ function NotificationForm() {
 
     
     
-    axios.post('https://smartgarm-panchayat-system-7.onrender.com/notifications', formData)
+    axios.post('http://localhost:3000/notifications', formData)
       .then((response) => {
         // setResponseMessage(response.data.message);
         console.log('Notification sent successfully:', response.data);

@@ -11,6 +11,8 @@ function NewWardEntry() {
   const [councilorName, setCouncilorName] = useState('');
   const [councilorNumber, setCouncilorNumber] = useState('');
 
+  axios.defaults.withCredentials=true;
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,7 +27,7 @@ function NewWardEntry() {
     };
 
     try {
-      const response = await axios.post('https://smartgarm-panchayat-system-7.onrender.com/wards', wardData);
+      const response = await axios.post('http://localhost:3000/wards', wardData);
       console.log(response.data.message);
       alert('Ward entry added successfully!');
     } catch (error) {

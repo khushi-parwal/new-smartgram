@@ -5,11 +5,12 @@ import './displayward.css';
 function Displayward() {
   const [wardEntries, setWardEntries] = useState([]);
 
+  axios.defaults.withCredentials=true;
   // Fetch ward entries from the server
   useEffect(() => {
     const fetchWardEntries = async () => {
       try {
-        const response = await axios.get('https://smartgarm-panchayat-system-7.onrender.com/displayward');
+        const response = await axios.get('http://localhost:3000/displayward');
         setWardEntries(response.data);
       } catch (error) {
         console.error('Error fetching ward entries:', error);

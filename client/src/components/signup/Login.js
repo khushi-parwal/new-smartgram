@@ -11,10 +11,12 @@ function Login() {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials=true;
+
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post('https://smartgarm-panchayat-system-7.onrender.com/login', { username, password })
+      .post('http://localhost:3000/login', { username, password })
       .then((response) => {
         setMessage(response.data.message); 
         console.log('Login successful:', response.data);

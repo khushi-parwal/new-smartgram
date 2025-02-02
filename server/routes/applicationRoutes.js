@@ -3,10 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const Application = require('./../models/Application');
 
-
 const router = express.Router();
-
-
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -24,9 +21,6 @@ const upload = multer({ storage: storage });
 router.post('/new-connection', upload.single('idProof'), async (req, res) => {
   const { username, phone, address, email, connectionType, installationDate } = req.body;
   const idProof = req.file ? req.file.path : null;
-  // const idProof = req.file ? req.file.path : null;
-
-
   try {
     const newApplication = new Application({
       username,
@@ -38,6 +32,8 @@ router.post('/new-connection', upload.single('idProof'), async (req, res) => {
       idProof: idProof,
     });
 
+    axios.defaults.withCredentials=true;
+    
     await newApplication.save();
     res.status(200).json({ message: 'Application submitted successfully!' });
   } catch (error) {
@@ -54,7 +50,7 @@ router.get('/applications', async (req, res) => {
       // Map applications to include the full URL for the idProof
       const applicationsWithImageURL = applications.map((application) => ({
         ...application._doc,
-        idProof: application.idProof ? `https://smartgarm-panchayat-system-7.onrender.com/${application.idProof}` : null,
+        idProof: application.idProof ? `http://localhost:3000/${application.idProof}` : null,
       }));
       res.status(200).json(applicationsWithImageURL);
     } catch (error) {

@@ -5,9 +5,11 @@ import './notificationlist.css';
 function NotificationList() {
   const [notifications, setNotifications] = useState([]);
 
+  axios.defaults.withCredentials=true;
+  
   useEffect(() => {
     // Fetch notifications from the server
-    axios.get('https://smartgarm-panchayat-system-7.onrender.com/getnotification')
+    axios.get('http://localhost:3000/getnotification')
       .then((response) => {
         setNotifications(response.data);
         console.log('Notifications fetched successfully:', response.data);

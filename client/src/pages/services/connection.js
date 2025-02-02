@@ -17,6 +17,8 @@ const NewConnectionApplication = () => {
     });
     const [submitted, setSubmitted] = useState(false);
 
+    axios.defaults.withCredentials=true;
+
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         setFormData({
@@ -38,7 +40,7 @@ const NewConnectionApplication = () => {
         formDataObj.append('idProof', formData.idProof);
 
         try {
-            const response = await axios.post('https://smartgarm-panchayat-system-7.onrender.com/new-connection', formDataObj, {
+            const response = await axios.post('http://localhost:3000/new-connection', formDataObj, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

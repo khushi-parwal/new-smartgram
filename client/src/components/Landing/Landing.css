@@ -302,3 +302,129 @@
         width: 100%;
     }
   }
+
+  /*media queries*/
+/* For tablets and smaller screens */
+@media (max-width: 1024px) {
+  .combine {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+  }
+  
+  .nav {
+      flex-direction: column;
+      margin-right: 0;
+  }
+
+  .about-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .purpose, .services {
+      width: 80%;
+      padding: 50px;
+  }
+
+  .achievement-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .achievement-cards .card {
+      width: 90%;
+      margin-bottom: 20px;
+  }
+
+  .mainfooter {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .combine {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+  }
+
+  .nav {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .about-us {
+      font-size: 25px;
+      padding: 30px;
+  }
+
+  .purpose, .services {
+      width: 90%;
+      padding: 40px;
+  }
+
+  .achievements {
+      font-size: 25px;
+      padding: 20px;
+      height: auto;
+  }
+
+  .paracard {
+      width: 90%;
+      font-size: 18px;
+  }
+
+  .achievement-cards {
+      flex-direction: column;
+  }
+
+  .content {
+      flex-direction: column;
+  }
+
+  .content .column {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .mainfooter {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .below-footer {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+/* For very small devices like small phones */
+@media (max-width: 480px) {
+  .about-us, .achievements {
+      font-size: 20px;
+      padding: 20px;
+  }
+
+  .purpose, .services {
+      width: 95%;
+      padding: 30px;
+  }
+
+  .paracard {
+      font-size: 16px;
+  }
+
+  .achievement-cards .card {
+      width: 100%;
+      height: auto;
+  }
+
+  .below-footer {
+      font-size: 14px;
+  }
+}
