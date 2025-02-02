@@ -13,7 +13,7 @@ dotenv.config();
 const cors = require('cors');
 app.use(cors(
   {
-    origin:[""],
+    origin:["new-smartgram-frontend.vercel.app"],
     methods:["POST","GET"],
     credentials:true
   }
