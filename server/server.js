@@ -13,7 +13,7 @@ dotenv.config();
 const cors = require('cors');
 app.use(cors(
   {
-    origin:[""],
+    origin:[process.env.frontend_url],
     methods:["POST","GET"],
     credentials:true
   }
