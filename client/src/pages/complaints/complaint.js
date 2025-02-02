@@ -36,7 +36,7 @@ const handleSubmit = async (e) => {
     });
 
     try {
-        const response = await axios.post('http://localhost:3000/complaint', data, {
+        const response = await axios.post('new-smartgram-1.vercel.app/complaint', data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },

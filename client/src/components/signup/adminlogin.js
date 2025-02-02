@@ -18,7 +18,7 @@ function Alogin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/adminlogin', { username, password })
+    axios.post('new-smartgram-1.vercel.app/adminlogin', { username, password })
       .then((response) => {
         setMessage(response.data.message); // Display success message
         console.log('Login successful:', response.data);

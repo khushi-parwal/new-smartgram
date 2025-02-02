@@ -33,7 +33,7 @@ router.post('/new-connection', upload.single('idProof'), async (req, res) => {
     });
 
     axios.defaults.withCredentials=true;
-    
+
     await newApplication.save();
     res.status(200).json({ message: 'Application submitted successfully!' });
   } catch (error) {
@@ -50,7 +50,7 @@ router.get('/applications', async (req, res) => {
       // Map applications to include the full URL for the idProof
       const applicationsWithImageURL = applications.map((application) => ({
         ...application._doc,
-        idProof: application.idProof ? `http://localhost:3000/${application.idProof}` : null,
+        idProof: application.idProof ? `new-smartgram-1.vercel.app/${application.idProof}` : null,
       }));
       res.status(200).json(applicationsWithImageURL);
     } catch (error) {
