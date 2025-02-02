@@ -27,7 +27,7 @@ function NewWardEntry() {
     };
 
     try {
-      const response = await axios.post('new-smartgram-back.vercel.app
+      const response = await axios.post('https://new-smartgram-back.vercel.app/
 /wards', wardData);
       console.log(response.data.message);
       alert('Ward entry added successfully!');

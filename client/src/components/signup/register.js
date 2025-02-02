@@ -25,7 +25,7 @@ function Register() {
     setSubmitted(true);
 
     e.preventDefault()
-  axios.post('new-smartgram-back.vercel.app
+  axios.post('https://new-smartgram-back.vercel.app/
 /register',{name,aadhar,email,phone,address,gender,wardno,password})
   .then(response => {
     console.log(response.data);

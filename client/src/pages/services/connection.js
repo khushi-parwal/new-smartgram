@@ -40,7 +40,7 @@ const NewConnectionApplication = () => {
         formDataObj.append('idProof', formData.idProof);
 
         try {
-            const response = await axios.post('new-smartgram-back.vercel.app
+            const response = await axios.post('https://new-smartgram-back.vercel.app/
 /new-connection', formDataObj, {
                 headers: {
                     'Content-Type': 'multipart/form-data',

@@ -12,7 +12,7 @@ const ComplaintList = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get('new-smartgram-back.vercel.app
+                const response = await axios.get('https://new-smartgram-back.vercel.app/
 /displaycomplaint');
         
                 setComplaints(response.data);
@@ -38,10 +38,10 @@ const ComplaintList = () => {
                         <p><strong>Address:</strong> {complaint.address}</p>
                         
                         <div className="complaint-images">
-                            <div className="img-1">{complaint.photo && <img src={`new-smartgram-back.vercel.app
+                            <div className="img-1">{complaint.photo && <img src={`https://new-smartgram-back.vercel.app/
 /${complaint.photo}`} alt="Complaint Issue" />}
                             </div>
-                            <div className='img-2'>{complaint.idProof && <img src={`new-smartgram-back.vercel.app
+                            <div className='img-2'>{complaint.idProof && <img src={`https://new-smartgram-back.vercel.app/
 /${complaint.idProof}`} alt="ID Proof" />}
                             </div></div>
                     </li>

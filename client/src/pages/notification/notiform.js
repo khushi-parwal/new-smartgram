@@ -33,7 +33,7 @@ function NotificationForm() {
 
     
     
-    axios.post('new-smartgram-back.vercel.app
+    axios.post('https://new-smartgram-back.vercel.app/
 /notifications', formData)
       .then((response) => {
         // setResponseMessage(response.data.message);

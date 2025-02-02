@@ -9,7 +9,7 @@ const ApplicationList = () => {
     axios.defaults.withCredentials=true;
 
     useEffect(() => {
-        axios.get('new-smartgram-back.vercel.app
+        axios.get('https://new-smartgram-back.vercel.app/
 /applications')
             .then((response) => {
                 setApplications(response.data);

@@ -18,9 +18,9 @@ const MyComplaints = () => {
       }
 
       try {
-        // const response = await axios.get(`new-smartgram-back.vercel.app
+        // const response = await axios.get(`https://new-smartgram-back.vercel.app/
 /complaints/${userId}`);
-        const response = await axios.get(`new-smartgram-back.vercel.app
+        const response = await axios.get(`https://new-smartgram-back.vercel.app/
 /displaycomplaint`);
         console.log(response.data); 
         setComplaints(response.data);
@@ -63,7 +63,7 @@ export default MyComplaints;
 //     useEffect(() => {
 //         const fetchComplaints = async () => {
 //             try {
-//                 const response = await axios.get('new-smartgram-back.vercel.app
+//                 const response = await axios.get('https://new-smartgram-back.vercel.app/
 /complaints', {
 //                     withCredentials: true, // Send cookies with the request
 //                 });
