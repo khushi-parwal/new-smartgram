@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './myComplaint.css';
 
 const MyComplaints = () => {
@@ -18,8 +18,10 @@ const MyComplaints = () => {
       }
 
       try {
-        // const response = await axios.get(`https://new-smartgram-6mjh.vercel.app//complaints/${userId}`);
-        const response = await axios.get(`https://new-smartgram-6mjh.vercel.app//displaycomplaint`);
+        // const response = await axios.get(`new-smartgram-back.vercel.app
+/complaints/${userId}`);
+        const response = await axios.get(`new-smartgram-back.vercel.app
+/displaycomplaint`);
         console.log(response.data); 
         setComplaints(response.data);
       } catch (err) {
@@ -61,7 +63,8 @@ export default MyComplaints;
 //     useEffect(() => {
 //         const fetchComplaints = async () => {
 //             try {
-//                 const response = await axios.get('https://new-smartgram-6mjh.vercel.app//complaints', {
+//                 const response = await axios.get('new-smartgram-back.vercel.app
+/complaints', {
 //                     withCredentials: true, // Send cookies with the request
 //                 });
 //                 setComplaints(response.data);
