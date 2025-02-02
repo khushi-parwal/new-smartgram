@@ -10,7 +10,7 @@ function Displayward() {
   useEffect(() => {
     const fetchWardEntries = async () => {
       try {
-        const response = await axios.get('new-smartgram-1.vercel.app/displayward');
+        const response = await axios.get('http://localhost:3000/displayward');
         setWardEntries(response.data);
       } catch (error) {
         console.error('Error fetching ward entries:', error);
