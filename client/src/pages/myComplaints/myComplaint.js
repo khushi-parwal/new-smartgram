@@ -6,8 +6,6 @@ const MyComplaints = () => {
   const [complaints, setComplaints] = useState([]);
   const [error, setError] = useState('');
 
-  axios.defaults.withCredentials=true;
-
   useEffect(() => {
     const fetchComplaints = async () => {
       
@@ -18,9 +16,10 @@ const MyComplaints = () => {
       }
 
       try {
-        /*const response = await axios.get(`https://new-smartgram-back.vercel.app/complaints/${userId}`);*/
+        /*const response = await axios.get(`https://new-smartgram-backend.vercel.app
+/complaints/${userId}`);*/
 
-        const response = await axios.get(`https://new-smartgram-back.vercel.app/displaycomplaint`);
+        const response = await axios.get(`https://new-smartgram-backend.vercel.app/displaycomplaint`);
         console.log(response.data); 
         setComplaints(response.data);
       } catch (err) {

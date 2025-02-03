@@ -17,8 +17,6 @@ const NewConnectionApplication = () => {
     });
     const [submitted, setSubmitted] = useState(false);
 
-    axios.defaults.withCredentials=true;
-
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         setFormData({
@@ -40,7 +38,7 @@ const NewConnectionApplication = () => {
         formDataObj.append('idProof', formData.idProof);
 
         try {
-            const response = await axios.post('https://new-smartgram-back.vercel.app/new-connection', formDataObj, {
+            const response = await axios.post('https://new-smartgram-backend.vercel.app/new-connection', formDataObj, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

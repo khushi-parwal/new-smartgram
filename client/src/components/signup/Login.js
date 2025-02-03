@@ -11,12 +11,9 @@ function Login() {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials=true;
-
   const handleLogin = (e) => {
     e.preventDefault();
-    axios
-      .post('https://new-smartgram-back.vercel.app/login', { username, password })
+    axios.post('https://new-smartgram-backend.vercel.app/login', { username, password })
       .then((response) => {
         setMessage(response.data.message); 
         console.log('Login successful:', response.data);

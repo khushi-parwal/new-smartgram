@@ -6,13 +6,10 @@ import "./displaycomplaint.css";
 
 const ComplaintList = () => {
     const [complaints, setComplaints] = useState([]);
-
-    axios.defaults.withCredentials=true;
-
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get('https://new-smartgram-back.vercel.app/displaycomplaint');
+                const response = await axios.get('https://new-smartgram-backend.vercel.app/displaycomplaint');
         
                 setComplaints(response.data);
             } catch (error) {
@@ -37,15 +34,9 @@ const ComplaintList = () => {
                         <p><strong>Address:</strong> {complaint.address}</p>
                         
                         <div className="complaint-images">
-                            <div className="img-1">{complaint.photo && <img src={`https://new-smartgram-back.vercel.app
-
-
-/${complaint.photo}`} alt="Complaint Issue" />}
+                            <div className="img-1">{complaint.photo && <img src={`https://new-smartgram-backend.vercel.app/${complaint.photo}`} alt="Complaint Issue" />}
                             </div>
-                            <div className='img-2'>{complaint.idProof && <img src={`https://new-smartgram-back.vercel.app
-
-
-/${complaint.idProof}`} alt="ID Proof" />}
+                            <div className='img-2'>{complaint.idProof && <img src={`https://new-smartgram-backend.vercel.app/${complaint.idProof}`} alt="ID Proof" />}
                             </div></div>
                     </li>
                 ))}

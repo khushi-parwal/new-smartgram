@@ -11,8 +11,6 @@ function NewWardEntry() {
   const [councilorName, setCouncilorName] = useState('');
   const [councilorNumber, setCouncilorNumber] = useState('');
 
-  axios.defaults.withCredentials=true;
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -27,7 +25,7 @@ function NewWardEntry() {
     };
 
     try {
-      const response = await axios.post('https://new-smartgram-back.vercel.app/wards', wardData);
+      const response = await axios.post('https://new-smartgram-backend.vercel.app/wards', wardData);
       console.log(response.data.message);
       alert('Ward entry added successfully!');
     } catch (error) {

@@ -11,14 +11,15 @@ const app = express();
 dotenv.config();
 
 const cors = require('cors');
-app.use(cors(
-  {
-    origin:[process.env.frontend_url],
-    methods:["POST","GET"],
-    credentials:true
-  }
-));
+// app.use(cors(
+//   {
+//     origin:[process.env.frontend_url],
+//     methods:["POST","GET"],
+//     credentials:true
+//   }
+// ));
 
+app.use(cors());
 
 app.use(bodyParser.json());
 

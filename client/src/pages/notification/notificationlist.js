@@ -5,11 +5,9 @@ import './notificationlist.css';
 function NotificationList() {
   const [notifications, setNotifications] = useState([]);
 
-  axios.defaults.withCredentials=true;
-
   useEffect(() => {
     // Fetch notifications from the server
-    axios.get('https://new-smartgram-back.vercel.app/getnotification')
+    axios.get('https://new-smartgram-backend.vercel.app/getnotification')
       .then((response) => {
         setNotifications(response.data);
         console.log('Notifications fetched successfully:', response.data);

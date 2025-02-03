@@ -6,10 +6,9 @@ import './Applicationlist.css';
 const ApplicationList = () => {
     const [applications, setApplications] = useState([]);
 
-    axios.defaults.withCredentials=true;
-
     useEffect(() => {
-        axios.get('https://new-smartgram-back.vercel.app/applications')
+        axios.get('https://new-smartgram-backend.vercel.app
+/applications')
             .then((response) => {
                 setApplications(response.data);
             })
