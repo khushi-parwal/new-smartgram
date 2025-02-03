@@ -50,8 +50,7 @@ router.get('/applications', async (req, res) => {
       // Map applications to include the full URL for the idProof
       const applicationsWithImageURL = applications.map((application) => ({
         ...application._doc,
-        idProof: application.idProof ? `https://new-smartgram-back.vercel.app/
-/${application.idProof}` : null,
+        idProof: application.idProof ? `https://new-smartgram-back.vercel.app/${application.idProof}` : null,
       }));
       res.status(200).json(applicationsWithImageURL);
     } catch (error) {

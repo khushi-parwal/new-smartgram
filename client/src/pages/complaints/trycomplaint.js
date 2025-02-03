@@ -35,8 +35,7 @@ const RegisterComplaint1 = () => {
         });
 
         try {
-            const response = await axios.post('https://new-smartgram-back.vercel.app/
-/complaint', data, {
+            const response = await axios.post('https://new-smartgram-back.vercel.app/complaint', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

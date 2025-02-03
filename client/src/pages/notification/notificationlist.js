@@ -9,8 +9,7 @@ function NotificationList() {
 
   useEffect(() => {
     // Fetch notifications from the server
-    axios.get('https://new-smartgram-back.vercel.app/
-/getnotification')
+    axios.get('https://new-smartgram-back.vercel.app/getnotification')
       .then((response) => {
         setNotifications(response.data);
         console.log('Notifications fetched successfully:', response.data);
