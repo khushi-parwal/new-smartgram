@@ -41,21 +41,22 @@ router.post('/new-connection', upload.single('idProof'), async (req, res) => {
 });
 
 // Route to get all applications
-router.get('/applications', async (req, res) => {
-    try {
-      const applications = await Application.find();
+// router.get('/applications', async (req, res) => {
+//     try {
+//       const applications = await Application.find();
       
-      // Map applications to include the full URL for the idProof
-      const applicationsWithImageURL = applications.map((application) => ({
-        ...application._doc,
-        idProof: application.idProof ? `https://new-smartgram-backend.vercel.app/${application.idProof}` : null,
-      }));
-      res.status(200).json(applicationsWithImageURL);
-    } catch (error) {
-      console.error('Error fetching applications:', error);
-      res.status(500).json({ message: 'Error fetching applications' });
-    }
-  });
+//       // Map applications to include the full URL for the idProof
+//       const applicationsWithImageURL = applications.map((application) => ({
+//         ...application._doc,
+//         idProof: application.idProof ?
+//          `https://new-smartgram-backend.vercel.app/${application.idProof}` : null,
+//       }));
+//       res.status(200).json(applicationsWithImageURL);
+//     } catch (error) {
+//       console.error('Error fetching applications:', error);
+//       res.status(500).json({ message: 'Error fetching applications' });
+//     }
+//   });
   
 
 module.exports = router;
