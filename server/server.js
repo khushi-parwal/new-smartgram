@@ -11,13 +11,6 @@ const app = express();
 dotenv.config();
 
 const cors = require('cors');
-// app.use(cors(
-//   {
-//     origin:[process.env.frontend_url],
-//     methods:["POST","GET"],
-//     credentials:true
-//   }
-// ));
 
 app.use(cors());
 
@@ -30,7 +23,7 @@ app.use(bodyParser.json());
 
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
 
@@ -53,11 +46,8 @@ app.use('/', complaintRoutes);
 app.use('/', wardRoutes);
 app.use('/', notificationRoutes);
 app.use('/', authRoutes);
-// app.use('/', mycomplaintRoutes)
+// app.use('/', mycomplaintRoutes
 
-
-// connectDB();
-// Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
