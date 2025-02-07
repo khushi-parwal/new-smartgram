@@ -46,7 +46,7 @@ app.use('/', complaintRoutes);
 app.use('/', wardRoutes);
 app.use('/', notificationRoutes);
 app.use('/', authRoutes);
-// app.use('/', mycomplaintRoutes
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

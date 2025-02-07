@@ -402,29 +402,3 @@
       text-align: center;
   }
 }
-
-/* For very small devices like small phones */
-@media (max-width: 480px) {
-  .about-us, .achievements {
-      font-size: 20px;
-      padding: 20px;
-  }
-
-  .purpose, .services {
-      width: 95%;
-      padding: 30px;
-  }
-
-  .paracard {
-      font-size: 16px;
-  }
-
-  .achievement-cards .card {
-      width: 100%;
-      height: auto;
-  }
-
-  .below-footer {
-      font-size: 14px;
-  }
-}

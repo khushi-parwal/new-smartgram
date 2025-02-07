@@ -7,7 +7,7 @@ const ApplicationList = () => {
     const [applications, setApplications] = useState([]);
 
     useEffect(() => {
-        axios.get('https://new-smartgram-backend.vercel.app/applications')
+        axios.get('http://localhost:3000/applications')
             .then((response) => {
                 setApplications(response.data);
             })
